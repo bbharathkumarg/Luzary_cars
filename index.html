@@ -29,6 +29,7 @@ nav a{
     color:white;
     text-decoration:none;
     margin:15px;
+    font-size:18px;
 }
 
 .container{
@@ -55,54 +56,82 @@ footer{
     padding:15px;
 }
 
+.search{
+    text-align:center;
+    padding:20px;
+}
+
+.search input{
+    width:300px;
+    padding:10px;
+    font-size:16px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header>
+<header id="home">
     <h1>🚗 Luxury Cars India</h1>
     <p>Top Luxury Cars and Prices</p>
 </header>
 
 <nav>
-    <a href="#">Home</a>
-    <a href="#">Cars</a>
-    <a href="#">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#cars">Cars</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<div class="container">
+<div class="search">
+    <input type="text"
+           id="searchBox"
+           placeholder="Search Cars..."
+           onkeyup="searchCars()">
+</div>
 
-<div class="card">
+<div class="container" id="cars">
+
+<div class="card car">
     <h2>Lamborghini Urus</h2>
+    <img src="images.jpg">
     <p>Price: ₹4.5 Crore</p>
     <p>Top Speed: 305 km/h</p>
 </div>
 
-<div class="card">
+<div class="card car">
     <h2>Ferrari SF90</h2>
+    <img src="images.jpg">
     <p>Price: ₹7.5 Crore</p>
     <p>Top Speed: 340 km/h</p>
-<img src="images.jpg" width="400">
 </div>
 
-<div class="card">
+<div class="card car">
     <h2>Rolls-Royce Cullinan</h2>
+    <img src="images.jpg">
     <p>Price: ₹10 Crore</p>
     <p>Top Speed: 250 km/h</p>
 </div>
 
-<div class="card">
+<div class="card car">
     <h2>Bentley Bentayga</h2>
+    <img src="images.jpg">
     <p>Price: ₹6 Crore</p>
     <p>Top Speed: 290 km/h</p>
 </div>
 
-<div class="card">
+<div class="card car">
     <h2>Bugatti Chiron</h2>
+    <img src="images.jpg">
     <p>Price: ₹21 Crore</p>
     <p>Top Speed: 420 km/h</p>
+</div>
+
+<div class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Email: bharath@example.com</p>
+    <p>Phone: +91 9876543210</p>
 </div>
 
 </div>
@@ -110,6 +139,31 @@ footer{
 <footer>
     © 2026 Luxury Cars India
 </footer>
+
+<script>
+function searchCars() {
+
+    let input =
+    document.getElementById("searchBox")
+    .value.toLowerCase();
+
+    let cards =
+    document.getElementsByClassName("car");
+
+    for(let i=0;i<cards.length;i++){
+
+        let text =
+        cards[i].innerText.toLowerCase();
+
+        if(text.includes(input)){
+            cards[i].style.display="";
+        }
+        else{
+            cards[i].style.display="none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>
