@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Beard Voice </title>
+<title>Beard Voice Cars Zone</title>
 
 <style>
 
 body{
     font-family: Arial, sans-serif;
-    background-color:#f4f4f4;
+    background:#f4f4f4;
     margin:0;
     padding:0;
 }
 
 header{
-    background:green;
+    background:linear-gradient(135deg,#000,#222,#444);
     color:white;
     text-align:center;
-    padding:20px;
+    padding:30px;
+}
+
+.logo{
+    width:140px;
+    border-radius:50%;
+    border:4px solid white;
 }
 
 nav{
-    background:#333;
+    background:#111;
     text-align:center;
-    padding:10px;
+    padding:15px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:15px;
+    margin:20px;
     font-size:18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+.search{
+    text-align:center;
+    padding:20px;
+}
+
+.search input{
+    width:350px;
+    padding:12px;
+    font-size:16px;
+    border-radius:5px;
+    border:1px solid #ccc;
 }
 
 .container{
@@ -40,111 +64,107 @@ nav a{
     background:white;
     margin:20px;
     padding:20px;
-    border-radius:10px;
-    box-shadow:0px 0px 10px lightgray;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
-img{
-    width:300px;
+.carimg{
+    width:350px;
     border-radius:10px;
+}
+
+.btn{
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#e68900;
 }
 
 footer{
-    background:black;
+    background:#111;
     color:white;
     text-align:center;
     padding:15px;
-}
-
-.search{
-    text-align:center;
-    padding:20px;
-}
-
-.search input{
-    width:300px;
-    padding:10px;
-    font-size:16px;
+    margin-top:20px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header id="home">
-    <img src="beardvoice.png" width="80" style="vertical-align:middle;border-radius:50%;">
-    <span style="font-size:40px;font-weight:bold;">Beard Voice Cars Zone <span>
-    <p>Luxury Cars and Prices</p>
-</header>
 
+<img src="beardvoice.png" class="logo">
+
+<h1>🚗 Beard Voice Cars Zone</h1>
+<p>India's Car Price, Review & Comparison Portal</p>
+</header>
 <nav>
     <a href="#home">Home</a>
     <a href="#cars">Cars</a>
-    <a href="#contact">List</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<div class="search">
-    <input type="text"
-           id="searchBox"
-           placeholder="Search Cars..."
-           onkeyup="searchCars()">
+<div class="search"> <input type="text"    id="searchBox"  placeholder="Search Cars..."  onkeyup="searchCars()">
 </div>
+
 <div class="container" id="cars">
 <div class="card car">
 <div style="display:flex;gap:20px;align-items:center;">
- <img src="images.jpg" style="width:350px;border-radius:10px;">
+<img src="images.jpg" class="carimg">
 <div>
-  <h2>Maruti Suzuki Fronx</h2>
- <p>
-            Primarily based on the Baleno premium hatchback, the Fronx has succeeded for Maruti in India.
-            Sold via Nexa outlets, it is available with three engines and two gearbox options.
-            The Fronx scores high marks for space, comfort, styling, and fuel efficiency.
-        </p>
-  <p><b>Price:</b> ₹8.10 - ₹14.84 Lakh</p>
+<h2>Maruti Suzuki Fronx</h2>
+<p>
+Primarily based on the Baleno premium hatchback, the Fronx has succeeded for Maruti in India.
+Sold through Nexa dealerships, it offers stylish design, comfort, fuel efficiency and modern features.
+</p>
+<p><b>Price:</b> ₹8.10 - ₹14.84 Lakh</p>
 <p><b>Top Speed:</b> 180 km/h</p>
- <button style="padding:10px 20px;background:#007bff;color:white;border:none;border-radius:5px;">
-            View Details </button>
+<p><b>Mileage:</b> 20 km/l</p>
+<button class="btn">View Details</button>
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
+<div class="card" id="contact">
+<h2>Contact Us</h2>
+<p>Email: beardvoicecars@gmail.com</p>
+<p>YouTube: Beard Voice</p>
 </div>
-
+</div>
 <footer>
-    © 2026 Luxury Cars India
+
+© 2026 Beard Voice Cars Zone
+
 </footer>
 
 <script>
-function searchCars() {
-
-    let input =
-    document.getElementById("searchBox")
-    .value.toLowerCase();
-
-    let cards =
-    document.getElementsByClassName("car");
-
-    for(let i=0;i<cards.length;i++){
-
-        let text =
-        cards[i].innerText.toLowerCase();
-
-        if(text.includes(input)){
-            cards[i].style.display="";
-        }
-        else{
-            cards[i].style.display="none";
-        }
-    }
+function searchCars(){
+let input =
+document.getElementById("searchBox")
+.value.toLowerCase();
+let cards =
+document.getElementsByClassName("car");
+for(let i=0;i<cards.length;i++){
+let text =
+cards[i].innerText.toLowerCase();
+if(text.includes(input)){
+cards[i].style.display="";
+} else{
+cards[i].style.display="none";
 }
+
+}
+
+}
+
 </script>
 
 </body>
